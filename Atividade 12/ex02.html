@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">          
+
+    <title>Exercicio 02 - Atividade 12</title>
+</head>
+<body>
+    <script>
+
+        function subconjunto(p1, p2){
+            if (!p1 || !p2){
+                var erro = 'Erro'
+                return erro;
+            }
+
+            if(p1.includes(p2)){
+                var subconjunto = 'É um SubConjunto';
+                return subconjunto;
+            }
+            else {
+                var nsubconjunto = 'Não é um SubConjunto';
+                return nsubconjunto;
+            }
+        }
+
+        alert(subconjunto('palavra', 'pala'));
+        alert(subconjunto('pincher', 'cher'));
+        alert(subconjunto('coracao', 'acao'));
+        alert(subconjunto('coracao', 'pela'));
+    </script>
+</body>
+</html>

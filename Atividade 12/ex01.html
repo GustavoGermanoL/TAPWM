@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1 - Atividade 12</title>
+</head>
+<body>
+    <script>
+         var arr1 = [5, 9, 3]
+
+        //  var test1 = Math.pow([arr1[1]],)
+         function main()
+         {
+            var soma = 0;
+            for(i = 0; i < arguments.length; i++){
+                soma += arguments[i];
+            }
+
+            
+
+                // function second(){
+                //     var q1 = Math.pow([arguments[0]])
+                // }
+
+            var q1 = Math.pow([arguments[0]], 2);
+
+            var q2 = Math.pow([arguments[1]], 2);
+
+            var tsoma = 'A soma dos três números é: ' + soma;
+
+            var t1 = ' O quadrado do primeiro número é: ' + q1;
+
+            var t2 = ' O quadrado do segundo número é: ' + q2;
+
+            // var results = [tsoma, t1, t2];
+
+            // var text = '';
+
+            // for(i = 0; i < results.lenght; i++){
+            //     text += results[i] + ' ';
+            // }
+
+            return tsoma + t1 + t2;
+
+         }
+
+         alert(main.apply(null, arr1));
+
+    </script>
+</body>
+</html>
