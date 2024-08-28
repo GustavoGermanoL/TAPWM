@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1 - Atividade 13</title>
+</head>
+<body>
+    <script>
+
+        // Primeira Maneira
+        var aluno1 = new Object();
+        aluno1.ra = "00000133331777";
+        aluno1.nome = "Anderson";
+        alert(`ra =${aluno1.ra} nome =${aluno1.nome}`);
+
+        // Segunda Maneira
+        var aluno2 = {
+            ra: "2932932",
+            nome: "Lacrimosa"
+        };
+        alert(`ra = ${aluno2.ra} nome = ${aluno2.nome}`);
+
+        // Terceira Maneira
+        var aluno3 = {};
+        var nome_propriedade = "ra";
+        aluno3[nome_propriedade] = "123";
+        aluno3['nome'] = "Luiz Gabriel";
+        alert(aluno3.ra + " " + aluno3.nome);
+    </script>
+</body>
+</html>
