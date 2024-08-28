@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 1 - Atividade 14</title>
+</head>
+<body>
+    <script>
+        class Retangulo {
+            constructor (pbase, paltura) {
+                this.base = pbase;
+                this.altura = paltura;
+            } 
+            calculaArea (){
+                return this.base * this.altura;
+            }
+        }
+
+        var retangulo1 = new Retangulo(5, 5);
+
+        var retangulo4 = new Retangulo(10, 92);
+
+        alert("A área do retangulo1 é: " + retangulo1.calculaArea());
+
+        alert("A área do retangulo4 é: " + retangulo4.calculaArea());
+
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 2 - Atividade 14</title>
+  </head>
+  <body>
+    <script>
+      function Conta() {
+        var nomeCorrentista;
+        var banco;
+        var numeroConta;
+        var saldo;
+
+        this.setnomeCorrentista = function (value) {
+          this.nomeCorrentista = value;
+        };
+        this.getnomeCorrentista = function () {
+          return this.nomeCorrentista;
+        };
+        this.setbanco = function (value) {
+          this.banco = value;
+        };
+        this.getBanco = function () {
+          return this.banco;
+        };
+        this.setnumeroConta = function (value) {
+          this.numeroConta = value;
+        };
+        this.getnumeroConta = function () {
+          return this.numeroConta;
+        };
+        this.setsaldo = function (value) {
+          this.saldo = value;
+        };
+        this.getsaldo = function () {
+          return this.saldo;
+        };
+      }
+
+      function Corrente() {
+        var saldoEspecial;
+
+        this.setsaldoEspecial = function (value) {
+          this.saldoEspecial = value;
+        };
+        this.getsaldoEspecial = function () {
+          return this.saldoEspecial;
+        };
+      }
+
+      Corrente.prototype = new Conta();
+
+      var GustavoBB = new Corrente();
+
+      GustavoBB.setbanco("Banco do Brasil");
+      GustavoBB.setnomeCorrentista("Gustavo Germano Lemos Pereira");
+      GustavoBB.setnumeroConta("12344321");
+      GustavoBB.setsaldo(1000);
+      GustavoBB.setsaldoEspecial(300);
+
+      function Poupanca() {
+        var juros;
+        var dataVencimento;
+
+        this.setjuros = function (value) {
+          this.juros = value;
+        };
+        this.getjuros = function () {
+          return this.juros;
+        };
+        this.setdataVencimento = function (value) {
+          this.dataVencimento = value;
+        };
+        this.getdataVencimento = function () {
+          return this.dataVencimento;
+        };
+      }
+
+      Poupanca.prototype = new Conta();
+
+      var GustavoPP = new Poupanca();
+
+      GustavoPP.setbanco("NuBank");
+      GustavoPP.setnomeCorrentista("Gustavo Germano Lemos Pereira");
+      GustavoPP.setnumeroConta("43211234");
+      GustavoPP.setsaldo(930);
+      GustavoPP.setjuros(100 / 20 + "%");
+      GustavoPP.setdataVencimento("09/05/2025");
+
+      alert(`Conta Corrente \nCorrentista: ${GustavoBB.getnomeCorrentista()}, 
+        \n Número da Conta: ${GustavoBB.getnumeroConta()}, 
+        \n Banco: ${GustavoBB.getBanco()},
+        \n Saldo: ${GustavoBB.getsaldo()},
+        \n Saldo Especial: ${GustavoBB.getsaldoEspecial()}`);
+
+      alert(`Conta Poupança \nNome: ${GustavoPP.getnomeCorrentista()},
+        \n Banco: ${GustavoPP.getBanco()},
+        \n Numero da Conta: ${GustavoPP.getnumeroConta()},
+        \n Saldo: ${GustavoPP.getsaldo()},
+        \n Juros: ${GustavoPP.getjuros()},
+        \n Data de Vencimento: ${GustavoPP.getdataVencimento()}`);
+    </script>
+  </body>
+</html>
