@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Retangulo(base, altura){
+            this.base = base;
+            this.altura = altura;
+
+            this.calcArea = function () {
+                return this.base * this.altura;
+
+            }
+        }
+        
+        var retangulo1 = new Retangulo(10,20)
+        alert(`A area do retangulo1 é ${retangulo1.calcArea()}`);
+
+        var retangulo2 = new Retangulo(12,21)
+        alert(`A area do retangulo2 é ${retangulo2.calcArea()}`);
+
+    </script>
+</body>
+</html>

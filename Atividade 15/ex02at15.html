@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Conta {
+        constructor(nomeCorrentista, banco, numeroConta, saldo) {
+          this._nomeCorrentista = nomeCorrentista;
+          this._banco = banco;
+          this._numeroConta = numeroConta;
+          this._saldo = saldo;
+        }
+
+        set nomeCorrentista(value) {
+          this._nomeCorrentista = value;
+        }
+        get nomeCorrentista() {
+          return this._nomeCorrentista;
+        }
+        set banco(value) {
+          this._banco = value;
+        }
+        get banco() {
+          return this._banco;
+        }
+        set numeroConta(value) {
+          this._numeroConta = value;
+        }
+        get numeroConta() {
+          return this._numeroConta;
+        }
+        set saldo(value) {
+          this._saldo = value;
+        }
+        get saldo() {
+          return this._saldo;
+        }
+      }
+
+      class Corrente extends Conta {
+        constructor(nomeCorrentista, banco, numeroConta, saldo, saldoEspecial) {
+          super(nomeCorrentista, banco, numeroConta, saldo);
+          this._saldoEspecial = saldoEspecial;
+        }
+        set saldoEspecial(value) {
+            this._saldoEspecial = value;
+        }
+        get saldoEspecial(){
+            return this._saldoEspecial;
+        }
+      }
+
+      class Poupanca extends Conta {
+        constructor(nomeCorrentista, banco, numeroConta, saldo, juros, dataVencimento) {
+          super(nomeCorrentista, banco, numeroConta, saldo);
+          this._juros = juros;
+          this._dataVencimento = dataVencimento;
+        }
+        set juros(value){
+            this._juros = value;
+        }
+        get juros(){
+            return this._juros;
+        }
+        set dataVencimento(value){
+            this._dataVencimento = value;
+        }
+        get dataVencimento(){
+            return this._dataVencimento;
+        }
+      }
+
+      var GustavoSan = new Corrente("Gustavo", "Santander", "99191", 100, 10);
+      var GustavoItau = new Poupanca("Gurustavo", "Itau", "193331", 10000, 10, "20/01/2029");
+
+      alert(`Conta Corrente: ${GustavoSan.nomeCorrentista}, ${GustavoSan.banco}. ${GustavoSan.numeroConta}, ${GustavoSan.saldo}, ${GustavoSan.saldoEspecial}`);
+
+      alert(`Conta Poupanca: ${GustavoItau.nomeCorrentista}, ${GustavoItau.banco}. ${GustavoItau.numeroConta}, ${GustavoItau.saldo}, ${GustavoItau.juros}, ${GustavoItau.dataVencimento}`);
+    
+    </script>
+  </body>
+</html>
