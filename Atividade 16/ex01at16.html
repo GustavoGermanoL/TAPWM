@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janelas</title>
+</head>
+<body>
+    <h1 id = "status">Janela Fechada</h1>
+    <img id = "janela" src = "janelafechada.png" height = "200px" width = "200px" alt ="Janela fechada">
+
+    <script>
+        const j = document.getElementById('janela');
+        const statusT = document.getElementById('status');
+
+        const iFechada = 'janelafechada.png';
+        const iAberta = 'janelaaberta.png';
+        const iQuebrada = 'janelaquebra.png';
+
+        function abrirJanela(){
+            if(janela.src.includes(iFechada)){
+                janela.src = iAberta;
+                statusT.textContent = 'Janela Aberta';
+            }
+        }
+
+        function fecharJanela() {
+            if(janela.src.includes(iAberta)){
+                janela.src = iFechada;
+                statusT.textContent = 'Janela Fechada';
+            }
+        }
+        
+        function quebrarJanela() {
+            janela.src = iQuebrada;
+            statusT.textContent = 'Janela Quebrada';
+            
+        }
+
+        janela.addEventListener('mouseover', abrirJanela);
+        janela.addEventListener('mouseout', fecharJanela);
+        janela.addEventListener('mousedown', quebrarJanela);
+
+
+    </script>
+
+    
+</body>
+</html>
