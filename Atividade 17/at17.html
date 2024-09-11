@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Atividade 17 </title>
+</head>
+<body>
+        
+    <script>
+
+
+        function maiusculo(){
+            var c = document.getElementById('cMaiuscula');
+            var t = document.getElementById('tMaiuscula');
+            if(c.checked){
+                t.value = t.value.toUpperCase();
+            }else{
+                t.value = t.value.toLowerCase();
+            }
+            
+                
+        }
+
+        function minusculo(){
+            var c = document.getElementById('cMinusculo');
+            var t = document.getElementById('tMinusculo');
+
+            if(c.checked){
+                t.value = t.value.toLowerCase();
+            }else{
+                t.value = t.value.toUpperCase();
+            }
+        }
+
+    </script>
+
+
+    <input type = "checkbox" id = "cMaiuscula" onchange="maiusculo()"> Selecione para deixar Maiusculo
+    <input type = "text" id  = "tMaiuscula" placeholder = "Digite algo">
+    <br />
+    <input type = "checkbox" id = "cMinusculo" onchange="minusculo()"> Selecione para deixar Minusculo
+    <input type = "text" id  = "tMinusculo" placeholder = "Digite algo">
+    
+</body>
+</html>
