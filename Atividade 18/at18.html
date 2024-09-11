@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 18</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        label, strong {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+    </style>
+</head>
+<body>
+    <script>
+        
+        function validar(){
+            var nome = document.getElementById("nome").value;
+            if(document.forms.formulario.elements[0].value == "" || document.forms.formulario.elements[0].value.length < 10){
+                alert("Preencha o NOME corretamente")
+                document.forms.formulario.elements[0].focus();
+                return false;
+            }
+
+            var email = document.getElementById("email").value;
+            if(!email.includes('@') || !email.includes('.') ){
+                alert("O email precisa ter @ e .");
+                return false;
+            }
+
+            if(email == "" || email.length > 50){
+                alert("Preencha o EMAIL corretamente");
+                return false;
+            }
+
+            var comentario = document.getElementById("comentario");
+            if(comentario.value == "" || comentario.value.length <= 20){
+                alert("Preencha o COMENTÁRIO corretamente");
+                return false;
+            }
+            var pesquisa = document.querySelector('input[name="pesquisa"]:checked');
+            if(!pesquisa) {
+                alert("Por favor, participe da pesquisa!");
+                return false;
+            }
+
+    
+            if (pesquisa.value === "sim") {
+                alert("Que bom que você voltou a visitar esta página!");
+            } else {
+                alert("Volte sempre a esta página!");
+            }
+
+            return true;
+
+        }
+
+        
+    </script>
+
+    <h1>Formulário</h1>
+
+    <form action = "at18.html" id = "POST" onsubmit="validar()" name = "formulario" id = "formulario">
+
+        <div width = 200 heigth = 200 align = center>
+            <bold>Nome: </bold>
+            <input type = "text" id = "nome" placeholder="Insira seu nome" size = "50">
+            <br />
+            <bold>Email</bold>
+            <input type = "text" id = "email" placeholder="Insira seu email" size = "50">
+            <br />
+            <bold>Comentario</bold>
+            <textarea id = "comentario" cols = "40" rows = "8" value = "" input></textarea>
+<br />
+            <strong>Você já visitou esta página antes?</strong>
+            <br />
+            <input type="radio" name="pesquisa" value="sim"> Sim
+            <br />
+            <input type="radio" name="pesquisa" value="nao"> Não
+            <br />
+
+    </div>
+        <button type = "submit">Enviar</button>
+
+        
+
+    </form>
+</body>
+</html>
